@@ -1,4 +1,4 @@
-## Cotação do Dolar no Banco Central do Brasil
+## Cotações e Outras Informações do Banco Central do Brasil
 
 Este repositório apresenta um exemplo de código em C# para pesquisa de cotação do dolar no banco central do Brasil. 
 
@@ -29,14 +29,18 @@ formato XML.
  
 **getValor** - Recupera o valor de uma série em uma determinada data (dd/MM/aaaa).
 
-**getValorEspecial** - Recupera o valor de uma série especial em um período.
+**getValorEspecial** - Recupera o valor de uma série especial em um período.
+
 **getValoresSeriesXML** - Recupera os valores de uma ou mais séries dentro de um determinado período.
 O resultado da consulta é devolvido ao cliente em formato XML.
 
 **getValoresSeriesVO** - Recupera os valores de uma ou mais séries dentro de um determinado período e
-retorna o resultado em forma de Array de objetos do tipo WSSerieVO.
+retorna o resultado em forma de Array de objetos do tipo WSSerieVO.
+
 
 A documentação oficial com todas as operações disponíveis no webservice está localizada em https://www3.bcb.gov.br/sgspub/JSP/sgsgeral/sgsAjuda.jsp#SA.
+
+
 
 
 
