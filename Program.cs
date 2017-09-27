@@ -10,9 +10,9 @@ namespace CotacaoDollar
     {
         static void Main(string[] args)
         {
-            decimal valorCotacao = 0;
-            int opcao = 0;
-            var cotacao = new Cotacao();
+            
+            Cotacao cotacao;
+            int opcaoConsulta = 0;
 
             do
             {
@@ -20,27 +20,42 @@ namespace CotacaoDollar
                 try
                 {
                     Console.WriteLine("[ 1 ] - Consulta de cotação por data");
-                    Console.WriteLine("[ 2 ] - Ultima cotação");
+                    Console.WriteLine("[ 2 ] - Consulta de cotação por período");
+                    Console.WriteLine("[ 3 ] - Consulta última cotação");
                     Console.WriteLine("[ 0 ] - Sair");
                     Console.WriteLine("Digite a opção desejada:");
 
-                    var tipoConsulta = Int32.Parse(Console.ReadLine());
+                    opcaoConsulta = Int32.Parse(Console.ReadLine());
 
-                    cotacao.ExibirOpcoesCotacao();
+                    Console.WriteLine("Digite a série temporal:");
 
-                    Console.WriteLine("Digite a moeda desejada para exibir a contação");
+                    var serie = Int32.Parse(Console.ReadLine());
+                    decimal valorCotacao = 0;
 
-                    opcao = Int32.Parse(Console.ReadLine());
+                    cotacao = new Cotacao(serie);
 
-                    switch (tipoConsulta)
+                    switch (opcaoConsulta)
                     {
                         case 1:
                             Console.WriteLine("Digite a data para consulta");
                             var data = Console.ReadLine();
-                            valorCotacao = cotacao.CotacaoPorData((TipoCotacao)opcao, data);
+
+                            valorCotacao = cotacao.CotacaoPorData(data);
+                            Console.WriteLine(valorCotacao);
                             break;
                         case 2:
-                            var ultimaCotacao = cotacao.UltimoValorSerie((TipoCotacao)opcao);
+                            Console.WriteLine("Digite a inicial:");
+                            var dataInicial = Console.ReadLine();
+
+                            Console.WriteLine("Digite a final:");
+                            var dataFinal = Console.ReadLine();
+
+                            valorCotacao = cotacao.CotacaoPorPeriodo(dataInicial,dataFinal);
+                            Console.WriteLine(valorCotacao);
+                            break;
+                        case 3:
+                            var ultimaCotacao = cotacao.UltimoValorSerie();
+
                             Console.WriteLine($"Fonte: {ultimaCotacao.fonte}");
                             Console.WriteLine($"Nome: {ultimaCotacao.nomeCompleto}");
                             Console.WriteLine($"Data: {ultimaCotacao.ultimoValor.dia}/{ultimaCotacao.ultimoValor.mes}/{ultimaCotacao.ultimoValor.ano} ");
@@ -49,7 +64,6 @@ namespace CotacaoDollar
                             break;
                     }
 
-                    Console.WriteLine(valorCotacao);
                     Console.ReadKey();
                     Console.Clear();
 
@@ -61,7 +75,7 @@ namespace CotacaoDollar
                     Console.Clear();
                 }
 
-            } while (opcao != 0);
+            } while (opcaoConsulta != 0);
 
         }
 

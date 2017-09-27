@@ -4,9 +4,10 @@ Este repositório apresenta um exemplo de código em C# para pesquisa de cotaç�
 
 O endereço do webservice do banco central é https://www3.bcb.gov.br/sgspub/JSP/sgsgeral/FachadaWSSGS.wsdl.
 
-### Lista com as Series de Cotação ###
+### Series Temporais ###
 
-O código da série representa o tipo de consulta que deve ser realizado no webservice.
+As séries temporais representam o tipo de consulta que deve ser realizado no webservice do bcb. Na 
+tabela abaixo, algumas informações que podem ser consultadas.
 
 |CÓDIGO         |  NOME         |
 | ------------- | ------------- |
@@ -14,21 +15,28 @@ O código da série representa o tipo de consulta que deve ser realizado no webs
 |10813          |Dólar (compra) |
 |21619          |Euro (venda)   |
 |21620          |Euro (compra)  |
-|21621          |Iene (venda)   |
-|21622          |Iene (compra)  | 
-|21623          |Libra esterlina (venda)|
-|21624          |Libra esterlina (compra)|
-|21625          |Franco Suíço (venda)|
-|21626          |Franco Suíço (compra)|
-|21627          |Coroa Dinamarquesa (venda)|
-|21628          |Coroa Dinamarquesa (compra)|
-|21629          |Coroa Norueguesa (venda)|
-|21630          |Coroa Norueguesa (compra)|
-|21631          |Coroa Sueca (venda)|
-|21632          |Coroa Sueca (compra)|
-|21633          |Dólar Australiano (venda)|
-|21634          |Dólar Australiano (compra)|
 |21635          |Dólar Canadense (venda)|
 |21636          |Dólar Canadense (compra)|
 
 ### Operações Disponíveis ###
+
+**getUltimoValorVO**  - Recupera o último valor de uma determinada série e retorna um objeto do tipo
+WSSerieVO.
+ 
+
+**GetUltimoValorXML** - Recupera o último valor de uma determinada série e retorna o resultado em
+formato XML.
+ 
+**getValor** - Recupera o valor de uma série em uma determinada data (dd/MM/aaaa).
+
+**getValorEspecial** - Recupera o valor de uma série especial em um período.
+**getValoresSeriesXML** - Recupera os valores de uma ou mais séries dentro de um determinado período.
+O resultado da consulta é devolvido ao cliente em formato XML.
+
+**getValoresSeriesVO** - Recupera os valores de uma ou mais séries dentro de um determinado período e
+retorna o resultado em forma de Array de objetos do tipo WSSerieVO.
+
+A documentação oficial com todas as operações disponíveis no webservice está localizada em https://www3.bcb.gov.br/sgspub/JSP/sgsgeral/sgsAjuda.jsp#SA.
+
+
+
