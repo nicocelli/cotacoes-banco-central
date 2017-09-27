@@ -4,6 +4,10 @@ Este repositório apresenta um exemplo de código em C# para pesquisa de cotaç�
 
 O endereço do webservice do banco central é https://www3.bcb.gov.br/sgspub/JSP/sgsgeral/FachadaWSSGS.wsdl.
 
+Ao executar a aplicação e informar os parâmetros solicitados os dados são exibidos conforme imagem abaixo:
+
+![alt text](https://github.com/nicocelli/cotacoes-banco-central/blob/master/exemplo.png)
+
 ### Series Temporais ###
 
 As séries temporais representam o tipo de consulta que deve ser realizado no webservice do bcb. Na 
@@ -39,6 +43,8 @@ retorna o resultado em forma de Array de objetos do tipo WSSerieVO.
 
 
 A documentação oficial com todas as operações disponíveis no webservice está localizada em https://www3.bcb.gov.br/sgspub/JSP/sgsgeral/sgsAjuda.jsp#SA.
+
+
 
 
 
