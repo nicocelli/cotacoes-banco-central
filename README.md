@@ -6,7 +6,7 @@ O endereço do webservice do banco central é https://www3.bcb.gov.br/sgspub/JSP
 
 Ao executar a aplicação e informar os parâmetros solicitados os dados são exibidos conforme imagem abaixo:
 
-![alt text](https://github.com/nicocelli/cotacoes-banco-central/blob/master/exemplo.png)
+![alt text](https://github.com/nicocelli/cotacoes-banco-central/blob/master/exemplo.PNG)
 
 ### Series Temporais ###
 
